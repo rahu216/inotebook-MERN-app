@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = "mongodb://localhost:27017/ "
+const mongoURI = "mongodb+srv://rr8973571:Pa3HwgShsE82FTD8@cluster0.n5pcljp.mongodb.net/"
 mongoose.set('strictQuery', false);
 const connectToMongo = ()=>{
     mongoose.connect(mongoURI, () => {
