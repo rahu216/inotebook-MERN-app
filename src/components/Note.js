@@ -52,19 +52,19 @@ const Note = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <form>
+              <form autoComplete="off">
                 <div className="mb-3">
                   <label htmlFor="title" className="form-label">Title</label>
-                  <input type="text" className="form-control" id="etitle" name="etitle" aria-describedby="emailHelp" value={note.etitle} onChange={onChange} />
+                  <input type="text" autoComplete="off" className="form-control" id="etitle" name="etitle" aria-describedby="emailHelp" value={note.etitle} onChange={onChange} />
 
                 </div>
                 <div className="mb-3">
                   <label htmlFor="description" className="form-label">Description</label>
-                  <input type="text" className="form-control" id="edescription" name="edescription"  value={note.edescription}  onChange={onChange} />
+                  <input type="text" autoComplete="off" className="form-control" id="edescription" name="edescription"  value={note.edescription}  onChange={onChange} />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="tag" className="form-label">Tag</label>
-                  <input type="text" className="form-control" id="etag" name="etag"  value={note.etag}  onChange={onChange} />
+                  <input type="text" autoComplete="off" className="form-control" id="etag" name="etag"  value={note.etag}  onChange={onChange} />
                 </div>
 
 

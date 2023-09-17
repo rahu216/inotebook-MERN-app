@@ -8,7 +8,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("https://inotebook-crud-app.onrender.com/api/auth/login", {
+        const response = await fetch("https://inotebook-crud-appp.onrender.com/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,15 +35,15 @@ const Login = (props) => {
 
   return (
     <div>
-     <form  onSubmit={handleSubmit}>
+     <form autoComplete="off" onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
+                    <input type="email" autoComplete="off" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" id="password" />
+                    <input type="password" autoComplete="off" className="form-control" value={credentials.password} onChange={onChange} name="password" id="password" />
                 </div>
 
                 <button type="submit" className="btn btn-primary">Submit</button>
