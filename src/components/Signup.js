@@ -1,13 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+const BASE_URL=process.env.BASE_URL;
 const Signup = () => {
   const [credentials, setCredentials] = useState({name:"",email: "", password: "",cpassword:""}) 
       let navigate=useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {name,email,password}= credentials;
-    const response = await fetch("https://inotebook-crud-appp.onrender.com/api/auth/createuser", {
+    const response = await fetch(`${BASE_URL}/api/auth/createuser`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
