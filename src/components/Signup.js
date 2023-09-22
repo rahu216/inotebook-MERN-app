@@ -14,7 +14,7 @@ const Signup = () => {
     e.preventDefault();
     const { name, email, password } = credentials;
     const response = await fetch(
-      `${process.env.BASE_URL}/api/auth/createuser`,
+      `${process.env.REACT_APP_BASE_URL}/api/auth/createuser`,
       {
         method: "POST",
         headers: {
