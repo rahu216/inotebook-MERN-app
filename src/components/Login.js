@@ -9,7 +9,7 @@ const Login = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      `${process.env.REACT_APP_BASE_URL}/api/auth/login`,
+      `${process.env.REACT_APP_API}/api/auth/login`,
       {
         method: "POST",
         headers: {
