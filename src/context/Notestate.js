@@ -9,16 +9,13 @@ const Notestate = (props) => {
 
   //delte  a note
   const deletenote = async (id) => {
-    const response = await fetch(
-      `${process.env.REACT_APP_API}/api/notes/deletenote/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("token"),
-        },
-      }
-    );
+    const response = await fetch(`/api/notes/deletenote/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+    });
     const json = response.json();
     const newnote = notes.filter((note) => {
       return note._id !== id;
@@ -28,17 +25,14 @@ const Notestate = (props) => {
   //fetch a note
   const getnote = async () => {
     //todo api call
-    const response = await fetch(
-      `${process.env.REACT_APP_API}/api/notes/fetchallnotes`,
-      {
-        method: "GET", // *GET, POST, PUT, DELETE, etc.
+    const response = await fetch("/api/notes/fetchallnotes", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
 
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("token"),
-        },
-      }
-    );
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+    });
     const json = await response.json();
     console.log(json);
     setnotes(json);
@@ -47,18 +41,15 @@ const Notestate = (props) => {
   //add a note
   const addnote = async (title, description, tag) => {
     //todo api call
-    const response = await fetch(
-      `${process.env.REACT_APP_API}/api/notes/addnote`,
-      {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
+    const response = await fetch("/api/notes/addnote", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
 
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("token"),
-        },
-        body: JSON.stringify({ title, description, tag }),
-      }
-    );
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ title, description, tag }),
+    });
 
     const note = await response.json();
     setnotes(notes.concat(note));
@@ -66,18 +57,15 @@ const Notestate = (props) => {
 
   //edit a note
   const editnote = async (id, title, description, tag) => {
-    const response = await fetch(
-      `${process.env.REACT_APP_API}/api/notes/updatenote/${id}`,
-      {
-        method: "PUT", // *GET, POST, PUT, DELETE, etc.
+    const response = await fetch(`/api/notes/updatenote/${id}`, {
+      method: "PUT", // *GET, POST, PUT, DELETE, etc.
 
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("token"),
-        },
-        body: JSON.stringify({ title, description, tag }),
-      }
-    );
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ title, description, tag }),
+    });
     const json = await response.json();
 
     let newNotes = JSON.parse(JSON.stringify(notes));
